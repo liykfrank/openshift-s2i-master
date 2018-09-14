@@ -23,13 +23,9 @@
       "name": "GIT_URI",
       "displayName": "Git Repository containing microservice source code",
       "description": "Git URL pointing to the repository containing microservice source code",
-      "value": "http://gitlab.nfedev.accelya.com/bsplink/<REPOSITORY_NAME>.git"
+      "value": "https://github.com/liykfrank/bsplink-agent-management.git"
     },
-    {
-      "description": "Git branch/tag reference",
-      "name": "GIT_REF",
-      "value": "develop"
-    },
+
     {
       "description": "Git Directory",
       "name": "CONTEXT_DIR"
@@ -108,11 +104,7 @@
         "resources": {},
         "source": {
           "git": {
-            "uri": "${GIT_URI}",
-            "ref": "${GIT_REF}"
-          },
-          "sourceSecret": {
-            "name": "gitlab-secret"
+            "uri": "${GIT_URI}"
           },
 	  "contextDir": "${CONTEXT_DIR}",
           "type": "Git"

@@ -22,12 +22,7 @@
       "name": "GIT_URI",
       "displayName": "Git Repository containing frontend source code",
       "description": "Git URL pointing to the repository containing frontend source code",
-      "value": "http://gitlab.nfedev.accelya.com/bsplink/nfe-frontend.git"
-    },
-    {
-      "description": "Git branch/tag reference",
-      "name": "GIT_REF",
-      "value": "develop"
+      "value": "https://github.com/liykfrank/nfe-frontend.git"
     },
     {
       "description": "Git Directory",
@@ -86,11 +81,7 @@
         "resources": {},
         "source": {
           "git": {
-            "uri": "${GIT_URI}",
-            "ref": "${GIT_REF}"
-          },
-          "sourceSecret": {
-            "name": "gitlab-secret"
+            "uri": "${GIT_URI}"
           },
 	  "contextDir": "${CONTEXT_DIR}",
           "type": "Git"
