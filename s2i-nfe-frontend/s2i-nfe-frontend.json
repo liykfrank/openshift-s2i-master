@@ -1,0 +1,291 @@
+{
+  "apiVersion": "v1",
+  "kind": "Template",
+  "metadata": {
+    "annotations": {
+      "description": "S2I NFE frontend angular template",
+      "iconClass": "icon-angularjs",
+      "openshift.io/display-name": "s2i-nfe-frontend",
+      "openshift.io/long-description": "This S2I template provides a node:alpine with all necessary build tools and libraries that are needed to build and run an angular web application.",
+      "tags": "nfe,javascript,angular"
+  },
+    "name": "s2i-nfe-frontend"
+  },
+  "parameters": [
+    {
+      "name": "APP_NAME",
+      "displayName": "Application Name",
+      "description": "Application name",
+      "value": "nfe-frontend"
+    },
+    {
+      "name": "GIT_URI",
+      "displayName": "Git Repository containing frontend source code",
+      "description": "Git URL pointing to the repository containing frontend source code",
+      "value": "http://gitlab.nfedev.accelya.com/bsplink/nfe-frontend.git"
+    },
+    {
+      "description": "Git branch/tag reference",
+      "name": "GIT_REF",
+      "value": "develop"
+    },
+    {
+      "description": "Git Directory",
+      "name": "CONTEXT_DIR"
+    }
+  ],
+  "objects": [
+    {
+      "apiVersion": "v1",
+      "kind": "ImageStream",
+      "metadata": {
+        "annotations": {
+          "openshift.io/generated-by": "OpenShiftNewApp"
+        },
+        "labels": {
+          "app": "${APP_NAME}"
+        },
+        "name": "${APP_NAME}"
+      },
+      "spec": {
+        "tags": [
+          {
+            "annotations": null,
+            "from": {
+              "kind": "DockerImage",
+              "name": "${APP_NAME}:latest"
+            },
+            "importPolicy": {},
+            "name": "latest"
+          }
+        ]
+      },
+      "status": {
+        "dockerImageRepository": ""
+      }
+    },
+    {
+      "apiVersion": "v1",
+      "kind": "BuildConfig",
+      "metadata": {
+        "annotations": {
+          "openshift.io/generated-by": "OpenShiftNewApp"
+        },
+        "labels": {
+          "app": "${APP_NAME}"
+        },
+        "name": "${APP_NAME}"
+      },
+      "spec": {
+        "output": {
+          "to": {
+            "kind": "ImageStreamTag",
+            "name": "${APP_NAME}:latest"
+          }
+        },
+        "resources": {},
+        "source": {
+          "git": {
+            "uri": "${GIT_URI}",
+            "ref": "${GIT_REF}"
+          },
+          "sourceSecret": {
+            "name": "gitlab-secret"
+          },
+	  "contextDir": "${CONTEXT_DIR}",
+          "type": "Git"
+        },
+        "strategy": {
+          "sourceStrategy": {
+            "from": {
+              "kind": "ImageStreamTag",
+	      "name": "s2i-nfe-frontend:latest"
+            },
+	    "env": []
+          },
+          "type": "Source"
+        },
+        "triggers": [
+          {
+            "gitlab": {
+		          "secret": "secret"
+            },
+            "type": "Gitlab"
+          },
+          {
+            "generic": {
+		          "secret": "secret"
+            },
+            "type": "Generic"
+          },
+          {
+            "type": "ConfigChange"
+          },
+          {
+            "imageChange": {},
+            "type": "ImageChange"
+          }
+        ]
+      },
+      "status": {
+        "lastVersion": 0
+      }
+    },
+    {
+      "apiVersion": "v1",
+      "kind": "DeploymentConfig",
+      "metadata": {
+        "annotations": {
+          "openshift.io/generated-by": "OpenShiftNewApp"
+        },
+        "labels": {
+          "app": "${APP_NAME}"
+        },
+        "name": "${APP_NAME}"
+      },
+      "spec": {
+        "replicas": 1,
+        "selector": {
+          "app": "${APP_NAME}",
+          "deploymentconfig": "${APP_NAME}"
+        },
+        "strategy": {
+          "resources": {},
+          "rollingParams": {
+            "intervalSeconds": 1,
+            "maxSurge": "25%",
+            "maxUnavailable": "25%",
+            "timeoutSeconds": 600,
+            "updatePeriodSeconds": 1
+          },
+          "type": "Rolling"
+        },
+        "template": {
+          "metadata": {
+            "annotations": {
+              "openshift.io/generated-by": "OpenShiftNewApp"
+            },
+            "labels": {
+              "app": "${APP_NAME}",
+              "deploymentconfig": "${APP_NAME}"
+            }
+          },
+          "spec": {
+            "containers": [
+              {
+                "env": [
+                  {
+                    "name": "SPRING_PROFILES_ACTIVE",
+                    "value": "dev"
+                  }
+                ],
+                "image": "${APP_NAME}",
+                "imagePullPolicy": "Always",
+                "name": "${APP_NAME}",
+                "ports": [
+                  {
+                    "containerPort": 8080,
+                    "protocol": "TCP"
+                  }
+                ],
+                "resources": {},
+                "terminationMessagePath": "/dev/termination-log"
+              }
+            ],
+            "dnsPolicy": "ClusterFirst",
+            "restartPolicy": "Always",
+            "securityContext": {},
+            "terminationGracePeriodSeconds": 30
+          }
+        },
+        "test": false,
+        "triggers": [
+          {
+            "type": "ConfigChange"
+          },
+          {
+            "imageChangeParams": {
+              "automatic": true,
+              "containerNames": [
+                "${APP_NAME}"
+              ],
+              "from": {
+                "kind": "ImageStreamTag",
+                "name": "${APP_NAME}:latest"
+              }
+            },
+            "type": "ImageChange"
+          }
+        ]
+      },
+      "status": {}
+    },
+    {
+      "apiVersion": "v1",
+      "kind": "Service",
+      "metadata": {
+        "annotations": {
+          "openshift.io/generated-by": "OpenShiftNewApp"
+        },
+        "creationTimestamp": null,
+        "labels": {
+          "app": "${APP_NAME}"
+        },
+        "name": "${APP_NAME}"
+      },
+      "spec": {
+        "ports": [
+          {
+            "name": "8080-tcp",
+            "port": 8080,
+            "protocol": "TCP",
+            "targetPort": 8080
+          }
+        ],
+        "selector": {
+          "app": "${APP_NAME}",
+          "deploymentconfig": "${APP_NAME}"
+        },
+        "sessionAffinity": "None",
+        "type": "ClusterIP"
+      },
+      "status": {
+        "loadBalancer": {}
+      }
+    },
+    {
+      "apiVersion": "route.openshift.io/v1",
+      "kind": "Route",
+      "metadata": {
+        "name": "${APP_NAME}"
+      },
+      "spec": {
+        "host": "${APP_NAME}.nfedev.accelya.com",
+        "port": {
+          "targetPort": "8080-tcp"
+        },
+        "to": {
+          "kind": "Service",
+          "name": "${APP_NAME}",
+          "weight": 100
+        },
+        "wildcardPolicy": "None"
+      },
+      "status": {
+        "ingress": [
+          {
+            "conditions": [
+              {
+                "status": "True",
+                "type": "Admitted"
+              }
+            ],
+            "host": "${APP_NAME}.nfedev.accelya.com",
+            "routerName": "router",
+            "wildcardPolicy": "None"
+          }
+        ]
+      }
+    }
+  ]
+}

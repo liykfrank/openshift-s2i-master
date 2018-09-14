@@ -1,0 +1,40 @@
+#!/bin/bash -e
+#
+# S2I assemble script for the 'nfe-frontend' image.
+# The 'assemble' script builds your application source ready to run.
+#
+# For more information refer to the documentation:
+#	https://github.com/openshift/source-to-image/blob/master/docs/builder_image.md
+#
+#HOME directory of base image =>  /opt/app-root/src
+
+echo "--> S2I:assemble step start ..."
+echo "--> Executing script as user=" + `id`
+
+# If the assemble script is executed with '-h' flag,
+# print the usage.
+if [ "$1" = "-h" ]; then
+  exec /usr/libexec/s2i/usage
+fi
+
+# Restore artifacts from the previous build (if they exist).
+if [ "$(ls /tmp/artifacts/ 2>/dev/null)" ]; then
+  echo "---> Restoring build artifacts"
+  mv /tmp/artifacts/. ./
+fi
+
+echo "---> Starting Angular web application build process ..."
+echo "---> Application source directory is set to $HOME ..."
+ 
+DEPLOY_DIR=/opt/openshift
+echo "---> Set target directory to $DEPLOY_DIR ..."
+
+cp -Rf /tmp/src/. ./
+echo "---> Copied application source to $HOME ..."
+ls -la $HOME
+
+echo "---> S2I:assemble Angular web application ..."
+npm install
+echo "---> assemble to enviroment $ENV_TO_BUILD"
+
+npm run $ENV_TO_BUILD
