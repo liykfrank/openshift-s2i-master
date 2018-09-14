@@ -1,0 +1,1000 @@
+   10  cd ..
+   11  ls
+   12  cd ..
+   13  ls
+   14  unzip consumer.zip 
+   15  cd consumer/
+   16  code 
+   17  cd ..
+   18  ls
+   19  cd spring-cloud-kubernetes/
+   20  ls
+   21  cd spring-cloud-kubernetes-examples/
+   22  lks
+   23  ls
+   24  cd kubernetes-circuitbreaker-ribbon-example/
+   25  ls
+   26  code
+   27  ls
+   28  cd ..
+   29  ls
+   30  cp -r consumer hello-service
+   31  cd hello-service/
+   32  ls
+   33  vim pom.xml 
+   34  ls
+   35  code
+   36  cd ..
+   37  ls
+   38  cd spring-cloud-kubernetes/
+   39  ls
+   40  cd spring-cloud-kubernetes-examples/
+   41  ;s
+   42  ls
+   43  cd kubernetes-circuitbreaker-ribbon-example/
+   44  ls
+   45  cd name-service/
+   46  ls
+   47  code
+   48  cd /home/frank/frankdev/frank/
+   49  ls
+   50  cd hello-service/
+   51  ls
+   52  mvn clean package fabric8:deploy
+   53  cd ..
+   54  ls
+   55  cd consumer/
+   56  code
+   57  code
+   58  ls
+   59  vim pom.xml 
+   60  mvn clean package fabric8:deploy
+   61  code
+   62  cd ..
+   63  cd hello-service/
+   64  mvn clean package fabric8:deploy
+   65  ls
+   66  mvn clean package fabric8:deploy
+   67  cd ..
+   68  cd hello-service/
+   69  ls
+   70  mvn clean package fabric8:deploy
+   71  docker ps | wc -l
+   72  pwd
+   73  ls
+   74  cd ..
+   75  ls
+   76  vim readme.md 
+   77  cd -
+   78  pwd
+   79  ls
+   80  mvn clean package fabric8:deploy -Pkubernetes
+   81  cd ..
+   82  ls
+   83  cd. .
+   84  ls
+   85  cd ..
+   86  ls
+   87  cd spring-cloud-kubernetes-examples/
+   88  ls
+   89  cd kubernetes-hello-world-example/
+   90  vim README.md 
+   91  cd sublime_text_3/
+   92  ./sublime_text 
+   93  top
+   94  docker ps
+   95  docker ps | wc -l
+   96  oc login -u developer
+   97  oc get pods
+   98  oc get rc
+   99  oc set -help
+  100  cd ..
+  101  ls
+  102  cp -r spring-cloud-kubernetes/spring-cloud-kubernetes-examples/kubernetes-reload-example/ .
+  103  ls -lrt
+  104  cd kubernetes-reload-example/
+  105  code
+  106  pwd
+  107  mvn clean package fabric8;deploy
+  108  mvn clean package fabric8:deploy
+  109  ls
+  110  oc login -u developer
+  111  oc create configmap reload-example --from-file=config-map.yml
+  112  oc login -u developer
+  113  mvn clean package fabric8:deploy
+  114  oc policy add-role-to-user cluster-reader system:serviceaccount:myproject:default
+  115  oc login -u developer
+  116  oc policy add-role-to-user cluster-reader system:serviceaccount:myproject:default
+  117  oc login -u system:admin
+  118  oc policy add-role-to-user cluster-reader system:serviceaccount:myproject:default
+  119  oc cluster down
+  120  poweroff
+  121  cd /home/frank/frankdev/
+  122  ls
+  123  tar -xzvf ideaIU-2018.1.5.tar.gz 
+  124  ls -lrt
+  125  cd idea-IU-181.5281.24/
+  126  ls -lrt
+  127  cd bin/
+  128  ls -lrt
+  129  ./idea.sh 
+  130  pwd
+  131  vim /home/frank/.rcprofile
+  132  cd /home/frank/
+  133  ls -al
+  134  vim .bashrc 
+  135  cd -
+  136  ls
+  137  cd /home/frank/sublime_text_3/
+  138  ./sublime_text 
+  139  cd frankdev/frank/
+  140  ls
+  141  cd spring-cloud-k8s-boss/
+  142  ls
+  143  idea.sh
+  144  ./idea.sh
+  145  ls
+  146  idea.sh
+  147  pwd
+  148  idea.sh 
+  149  idea.sh .
+  150  cd ..
+  151  ls
+  152  cd consumer/
+  153  code
+  154  cd ..
+  155  ls
+  156  oc login -u developer
+  157  oc policy add-role-to-user view system:serviceaccount:myproject:default
+  158  ls
+  159  cd spring-cloud-kubernetes/
+  160  ls
+  161  cd spring-cloud-kubernetes-examples/
+  162  ls
+  163  cd kubernetes-circuitbreaker-ribbon-example/
+  164  ls
+  165  cd name-service/
+  166  ls
+  167  mvn package fabric8:deploy
+  168  oc get pods
+  169  mvn package fabric8:deploy
+  170  oc get pods
+  171  docker ps
+  172  oc cluster down
+  173  oc cluster up
+  174  oc login -u developer
+  175  oc policy add-role-to-user view system:serviceaccount:myproject:default
+  176  vim /home/frank/frankdev/apache-maven-3.5.4/conf/settings.xml 
+  177  cd /home/frank/
+  178  ls
+  179  cd .m2/repository
+  180  ls
+  181  cd org/spring
+  182  ls
+  183  cd cloud/
+  184  ls
+  185  cd ..
+  186  cd springframework/
+  187  ls
+  188  cd cloud/
+  189  ls
+  190  rm -rf spring-cloud-kubernetes*
+  191  ls -lrt
+  192  cd /home/
+  193  cd frank/
+  194  wget https://repo.maven.apache.org/maven2/org/springframework/cloud/spring-cloud-kubernetes-dependencies/0.3.0.RC1/spring-cloud-kubernetes-dependencies-0.3.0.RC1.pom
+  195  cd /home/frank/frankdev/apache-maven-3.5.4/
+  196  cd conf/
+  197  vim settings.xml 
+  198  systemctl statusfirewalld
+  199  systemctl status firewalld
+  200  systemctl stop firewalld
+  201  systemctl status firewalld
+  202  systemctl status firewalld -l
+  203  systemctl status firewalld
+  204  oc cluster down
+  205  systemctl restart docker
+  206  systemctl status docker
+  207  oc cluster up
+  208  oc login -u developer
+  209  oc policy add-role-to-user view system:serviceaccount:myproject:default
+  210  cd /home/frank/
+  211  cd frankdev/frank/
+  212  ls
+  213  cd hello-service/
+  214  mvn clean package fabric8:deploy
+  215  cd ..
+  216  ls
+  217  cd spring-cloud-k8s-gateway/
+  218  mvn clean package fabric8:deploy
+  219  cd ..
+  220  ls
+  221  cd consumer/
+  222  ls
+  223  edit
+  224  mvn package fabric8:deploy
+  225  oc login -u system:admin
+  226  oc policy add-role-to-user cluster-reader system:serviceaccount:myproject:default
+  227  cd ..
+  228  ls
+  229  cd spring-cloud-k8s-gateway/
+  230  ls
+  231  code
+  232  sudo su -
+  233  ls
+  234  systemctl start docker
+  235  oc cluster up
+  236  oc login -u developer
+  237  cd frankdev/frank/
+  238  ls
+  239  git clone https://github.com/liykfrank/monolith-to-microservices.git
+  240  cd spring-cloud-k8s-gateway/
+  241  edit
+  242  cd ..
+  243  ls
+  244  cd monolith-to-microservices/
+  245  edit
+  246  oc login -u developer
+  247   oc policy add-role-to-user view system:serviceaccount:myproject:default
+  248  ls
+  249  cd hello/
+  250  ls
+  251  vim pom.xml 
+  252  mvn io.fabric8:fabric8-maven-plugin:LATEST:setup
+  253  mvn clean package fabric8:deploy
+  254  oc cluster down
+  255  oc cluster up
+  256  oc login -u developer
+  257  oc policy add-role-to-user view system:serviceaccount:myproject:default
+  258  mvn clean package fabric8:deploy
+  259  cd ..
+  260  cd monolith/
+  261  mvn io.fabric8:fabric8-maven-plugin:LATEST:setup
+  262  mvn clean package fabric8:deploy
+  263  cd ..
+  264  ls
+  265  cd gateway/
+  266  code
+  267  oc login -u developer
+  268  oc get services
+  269  oc get services -o wide
+  270  getenforce
+  271  oc login -u developer
+  272  oc get services -o wide
+  273  ls
+  274  cd ..
+  275  ls
+  276  cd spring-cloud-kubernetes/
+  277  ls
+  278  cd spring-cloud-kubernetes-
+  279  cd spring-cloud-kubernetes-examples/
+  280  ls
+  281  cd kubernetes-hello-world-example/
+  282  ls
+  283  vim README.md 
+  284  cd ..
+  285  ls
+  286  cd spring-cloud-k8s-boss/
+  287  ls
+  288  cd src/
+  289  ls
+  290  cd ..
+  291  edit
+  292  mvn clean package fabric8:deploy
+  293  cd ..
+  294  cd spring-cloud-k8s-gateway/
+  295  mvn clean package fabric8:deploy
+  296  ls
+  297  mvn clean package fabric8:deploy
+  298  rank
+  299  oc cluster down
+  300  poweroff
+  301  ping www.baidu.com
+  302  cd ..
+  303  ls
+  304  cd spring-cloud-k8s-boss/
+  305  ls
+  306  mvn clean package fabric8:deploy
+  307  oc login -u developer
+  308  oc get service -o wide
+  309  cd ..
+  310  ls
+  311  cd spring-cloud-kubernetes/
+  312  ls
+  313  cd spring-cloud-kubernetes-examples/
+  314  ls
+  315  cd kubernetes-circuitbreaker-ribbon-example/
+  316  ls
+  317  cd name-service/
+  318  ls
+  319  mvn clean package fabric8:deploy
+  320  pwd
+  321  mvn clean package fabric8:deploy
+  322  cd ..
+  323  ls
+  324  cd spring-cloud-k8s-gateway/
+  325  ls
+  326  git status
+  327  edit
+  328  mvn clean package fabric8:deploy
+  329  cd ..
+  330  ls
+  331  cd hello-service/
+  332  ls
+  333  mvn clean package fabric8:deploy
+  334  cd ..
+  335  ls
+  336  cd consumer/
+  337  mvn package fabric8:deploy
+  338  cd /home/frank/
+  339  ls
+  340  cd frankdev/
+  341  ls
+  342  cd apache-maven-3.5.4/
+  343  cd conf/
+  344  ls
+  345  vim settings.xml 
+  346  cd /home/frank
+  347  cd .m2
+  348  ls
+  349  cd /home/frank/frankdev/frank/
+  350  ls
+  351  cd consumer/
+  352  ls
+  353  mvn clean package fabric8:deploy
+  354  cd ..
+  355  ls
+  356  cd hello-service/
+  357  ls
+  358  vim pom.xml 
+  359  cd ..
+  360  ls
+  361  cd consumer/
+  362  ls
+  363  vim pom.xml 
+  364  mvn clean package fabric8:deploy
+  365  edit
+  366  cd /home/frank/frankdev/
+  367  ls
+  368  cd Postman/
+  369  ./Postman 
+  370  docker ps
+  371  docker run -d -it --name logstash logstash -e 'input { rabbitmq {
+  372  host => "192.168.99.100" port => 30000 durable => true } }
+  373  docker run -d -it --name logstash logstash -e 'input { rabbitmq { host => "localhost" port => 30000 durable => true } }  output { elasticsearch { hosts => ["localhost"] } }'
+  374  docker rm logstash
+  375  docker run -d -it --name logstash logstash -e 'input { rabbitmq { host => "localhost" port => 30000 durable => true } }  output { elasticsearch { hosts => ["localhost"] } }'
+  376  docker ps
+  377  docker logs logstash
+  378  docker ps
+  379  docker stop logstash
+  380  docker rm logstash
+  381  ifconfig
+  382  docker run -d -it --name logstash logstash -e 'input { rabbitmq { host => "192.168.100.169" port => 30000 durable => true } }  output { elasticsearch { hosts => ["192.168.100.169"] } }'
+  383  docker log logstash
+  384  docker logs logstash
+  385  docker ps
+  386  docker logs logstash
+  387  docker stop logstash
+  388  docker exec rabbitmq /bin/bash
+  389  docker ps
+  390  docker exec 83883d1cb720 /bin/bash
+  391  docker inspect --format '{{ .NetworkSettings.IPAddress }}' 83883d1cb720
+  392  docker inspect --format '{{ .NetworkSettings.IPAddress }}' 00835b397e96
+  393  docker run -d -it --name logstash logstash -e 'input { rabbitmq { host => "172.17.0.2" port => 5672 durable => true } }  output { elasticsearch { hosts => ["172.17.0.3"]
+  394  docker run -d -it --name logstash logstash -e 'input { rabbitmq { host => "172.17.0.2" port => 5672 durable => true } }  output { elasticsearch { hosts => ["172.17.0.3"] } }'
+  395  docker rm logstash
+  396  docker run -d -it --name logstash logstash -e 'input { rabbitmq { host => "172.17.0.2" port => 5672 durable => true } }  output { elasticsearch { hosts => ["172.17.0.3"] } }'
+  397  docker logs logstash
+  398  docker ps
+  399  docker logs logstash
+  400  docker run -d -it --name es -p 9200:9200 -p 9300:9300 elasticsearch
+  401  docker run -d -it --name kibana --link es:elasticsearch -p 5601:5601 kibana
+  402  docker ps
+  403  ifconfig
+  404  docker run -d -it --name logstash logstash -e 'input { rabbitmq {
+  405  host => "192.168.99.100" port => 30000 durable => true } }
+  406  docker run -d -it --name logstash logstash -e 'input { rabbitmq {
+  407  host => "192.168.99.100" port => 30000 durable => true } }
+  408  docker run -d -it --name logstash logstash -e 'input { rabbitmq {
+  409  host => "192.168.100.169" port => 30000 durable => true } } elasticsearch { hosts => ["192.168.100.169"] } }'
+  410  docker ps
+  411  netstat -tnlp | grep 30000
+  412  ifcofnig
+  413  ping oc
+  414  cat /etc/hosts
+  415  ifconfig
+  416  history
+  417  sudo su -
+  418  systemctl start docker
+  419  cd frankdev/sts-bundle/sts-3.9.4.RELEASE/
+  420  ./STS 
+  421  cd ..
+  422  git clone https://github.com/liykfrank/sample-amqp-logging.git
+  423  ls
+  424  cd sample-amqp-logging/
+  425  edit
+  426  cd /home/frank/
+  427  ls -lrt
+  428  docker load < rabbitmq.tar
+  429  docker run -d -it --name rabbit --hostname rabbit -p 30000:5672 -p 30001:15672
+  430  docker run -d -it --name rabbit --hostname rabbit -p 30000:5672 -p 30001:15672 rabbitmq:management
+  431  docker run -d -it --name rabbit --hostname rabbit -p 30000:5672 -p 30001:15672 rabbitmq:3-management
+  432  docker ps
+  433  ls
+  434  docker load < elastic.tar
+  435  docker load < kibana.tar
+  436  docker load < logstash.tar
+  437  cd /home/frank/
+  438  cd frankdev/frank/
+  439  ls
+  440  cd hello-service/
+  441  code
+  442  ls
+  443  cd frankdev/frank/\
+  444  ls
+  445  cd hello-service/
+  446  ls
+  447  mvn clean package
+  448  ls
+  449  cd target/
+  450  ls
+  451  java -jar hello-0.0.1-SNAPSHOT.jar
+  452  cd ..
+  453  mvn clean package
+  454  java -jar target/hello-0.0.1-SNAPSHOT.jar
+  455  docker run -d -it --name rabbit --hostname rabbit -p 30000:5672 -p 30001:15672 rabbitmq:management
+  456  docker rm rabbit
+  457  docker run -d -it --name rabbit --hostname rabbit -p 30000:5672 -p 30001:15672 rabbitmq:management
+  458  dockre ps
+  459  docker ps
+  460  docker run -d -it --name es -p 9200:9200 -p 9300:9300 elasticsearch
+  461  docker rm es
+  462  docker run -d -it --name es -p 9200:9200 -p 9300:9300 elasticsearch
+  463  docker rm kibana
+  464  docker run -d -it --name kibana --link es:elasticsearch -p 5601:5601 kibana
+  465  docker ps | grep es
+  466  docker inspect --format '{{ .NetworkSettings.IPAddress }}'  36ba0255c836
+  467  docker inspect --format '{{ .NetworkSettings.IPAddress }}' 8570b38e5877
+  468  docker rm logstash
+  469  docker run -d -it --name logstash logstash -e 'input { rabbitmq { host => "172.17.0.2" port => 5672 durable => true } }  output { elasticsearch { hosts => ["172.17.0.3"] } }'
+  470  cd /home/frank/frankdev/frank/
+  471  cd hello-service/
+  472  ls
+  473  mvn clean package
+  474  java -jar target/hello-0.0.1-SNAPSHOT.jar
+  475  mvn clean package
+  476  java -jar target/hello-0.0.1-SNAPSHOT.jar
+  477  mvn clean package
+  478  java -jar target/hello-0.0.1-SNAPSHOT.jar
+  479  cd frankdev/sts-bundle/sts-3.9.4.RELEASE/
+  480  ./STS 
+  481  sudo su -
+  482  systemctl start docker
+  483  ls
+  484  oc cluster up
+  485  docker stop logstash
+  486  docker rm logstash 
+  487  docker run -d -it --name logstash logstash -e 'input { rabbitmq { host => "172.17.0.2" port => 5672 queue => "helloq"  durable => true } }  output { elasticsearch { hosts => ["172.17.0.3"] } }'
+  488  docker logs logstash
+  489  docker ps | grep logstash
+  490  docker logs logstash
+  491  oc cluster down
+  492  poweroff
+  493  docker images
+  494  docker images | grep 172.30.1.1:5000/myproject
+  495  docker rm 9be0edf810b7
+  496  docker rmi 9be0edf810b7
+  497  df -kh
+  498  docker ps | grep rabbitmq
+  499  docker ps | grep rabb*
+  500  docker image  | grep rabbitmq
+  501  docker images  | grep rabbitmq
+  502  cd frankdev/sts-bundle/sts-3.9.4.RELEASE/
+  503  ./STS 
+  504  poweroff
+  505  sudo su -
+  506  systemctl start docker
+  507  cd frankdev/sts-bundle/sts-3.9.4.RELEASE/
+  508  ./STS 
+  509  cd ..
+  510  cd frank/
+  511  ls
+  512  cd ..
+  513  ls
+  514  cd workspace/
+  515  ls
+  516  cd spring-cloud-docker-microservice-book-code/
+  517  ls
+  518  cd -r microservice-simple-provider-user-core--trace microservice-simple-provider-user-core2
+  519  cp -r microservice-simple-provider-user-core--trace microservice-simple-provider-user-core2
+  520  ls
+  521  cd microservice-simple-provider-user-core2
+  522  edit
+  523  docker rm rabbit
+  524  docker run -d -it --name rabbit --hostname rabbit -p 30000:5672 -p 30001:15672 rabbitmq:management
+  525  cd ..
+  526  ls
+  527  ls | grep without
+  528  cp -r microservice-consumer-movie-without-eureka microservice-consumer-movie-without-eureka2
+  529  cd microservice-consumer-movie-without-eureka2
+  530  ls
+  531  vim pom.xml 
+  532  cd /home/frank/
+  533  cd frankdev/sts-bundle/sts-3.9.4.RELEASE/
+  534  ./STS 
+  535  cd /home/frank/frankdev/workspace/
+  536  ls
+  537  cd spring-cloud-docker-microservice-book-code/
+  538  ls
+  539  vim pom.xml 
+  540  cd microservice-simple-provider-user
+  541  vim pom.xml 
+  542  cd ..
+  543  ls
+  544  vim pom.xml 
+  545  edit
+  546  cp pom.xml /home/frank/frankdev/frank/faulttolerence
+  547  cp pom.xml /home/frank/frankdev/frank/faulttolerence/
+  548  ls
+  549  cp -r microservice-simple-provider-user-core2 /home/frank/frankdev/frank/faulttolerence/
+  550  cd ..
+  551  cd frank/
+  552  ls
+  553  git clone https://github.com/liykfrank/faulttolerence.git
+  554  cd faulttolerence/
+  555  ls
+  556  pwd
+  557  ls
+  558  vim pom.xml 
+  559  ls
+  560  ll
+  561  mv microservice-simple-provider-user-core2/ agency-service
+  562  ls
+  563  cd agency-service/
+  564  cat pom.xml 
+  565  cd ..
+  566  ls
+  567  cat pom.xml 
+  568  cd agency-service/
+  569  ls
+  570  vim pom.xml 
+  571  ls
+  572  cd ..
+  573  ls
+  574  mvn clean
+  575  ls
+  576  cd agency-service/
+  577  mvn clean package
+  578  ls
+  579  cd src/main/resources/
+  580  ls
+  581  vim application.yml 
+  582  cd ../..
+  583  cd ..
+  584  mvn clean package
+  585  ls
+  586  java -jar target/agency-service-0.0.1-SNAPSHOT.jar
+  587  ls
+  588  cd ..
+  589  ls
+  590  ls -al
+  591  vim .gitignore 
+  592  git status
+  593  q!
+  594  vim .gitignore 
+  595  git status
+  596  git add .
+  597  git commit -m "add first module agency-service"
+  598  git push
+  599  ls
+  600  cp -r agency-service salesdata-service
+  601  vim pom.xml 
+  602  cd salesdata-service/
+  603  vim pom.xml 
+  604  cd ..
+  605  ls
+  606  git status
+  607  git add .
+  608  git commit -m "add salesdata service"
+  609  git push
+  610  cd ..
+  611  ls
+  612  cd faulttolerence/
+  613  pwd
+  614  ls
+  615  mv microservice-consumer-movie-without-eureka balance-service
+  616  ls
+  617  vim pom.xml 
+  618  cd balance-service/
+  619  vim pom.xml 
+  620  ls
+  621  cd ..
+  622  git satus
+  623  git status
+  624  git add .
+  625  git commit -m "add balance-service"
+  626  git push
+  627  ls
+  628  cp -r salesdata-service/ risk-service
+  629  cd risk-service/
+  630  ls
+  631  vim pom.xml 
+  632  cd ..
+  633  vim pom.xml 
+  634  ls
+  635  cd risk-service/
+  636  cd ..
+  637  ls
+  638  rm -rf risk-service/
+  639  cp -r balance-service/ risk-service
+  640  cd risk-service/
+  641  ls
+  642  vim pom.xml 
+  643  cd ..
+  644  git status
+  645  git add .
+  646  git commit -m "add risk-service"
+  647  git push
+  648  pwd
+  649  ls -lrt
+  650  mv microservice-hystrix-dashboard/ hystrix-dashboard/
+  651  mv microservice-hystrix-turbine-mq/ hystrix-turbine-mq
+  652  ls
+  653  vim pom.xml 
+  654  cd hystrix-dashboard/
+  655  vim pom.xml 
+  656  cd ..
+  657  ls
+  658  cd hystrix-
+  659  cd hystrix-turbine-mq/
+  660  vim pom.xml 
+  661  cd ..
+  662  ls
+  663  git status
+  664  git add .
+  665  git commit -m "added hystrix and turbine-mq server"
+  666  git push
+  667  poweroff
+  668  cd /home/frank/frankdev/workspace/
+  669  ls
+  670  cd spring-cloud-docker-microservice-book-code/
+  671  ls
+  672  ls | grep "without"
+  673  cp -r microservice-consumer-movie-without-eureka /home/frank/frankdev/frank/faulttolerence
+  674  ls | grep histrix
+  675  ls | grep hystrix
+  676  cp -r microservice-hystrix-dashboard/ /home/frank/frankdev/frank/faulttolerence
+  677  cp -r microservice-hystrix-turbine-mq /home/frank/frankdev/frank/faulttolerence
+  678  df -kh
+  679  docker rmi 6492dc7f6d59
+  680  docker rmi b9e3a9841158
+  681  docker images
+  682  sudo su -
+  683  systemctl start docker
+  684  docker images
+  685  vim rm.txt
+  686  /home/frank/sublime_text_3/sublime_text rm.txt 
+  687  docker rmi 1cd3c46ff28c
+  688  docker rmi 2eb21855d815
+  689  docker rmi 9f9a7cba5fe3
+  690  df -kh
+  691  docker rmi da27d201ae75
+  692  docker rmi 6e3292f42aed
+  693  df -kh
+  694  docker images
+  695  cd /home/frank/
+  696  ls -lrt
+  697  df -kh
+  698  rm -rf repository.zip 
+  699  cd /home/frank/.m2
+  700  ls
+  701  rm -rf repository.back/
+  702  rm -rf repository.tar.gz 
+  703  rm -rf repository.zip 
+  704  df -kh
+  705  cd /home/frank/
+  706  ls
+  707  cd frankdev/frank/
+  708  ls
+  709  cd faulttolerence/
+  710  ls
+  711  cd hystrix-dashboard/
+  712  edit
+  713  cd /home/frank/frankdev/sts-bundle/sts-3.9.4.RELEASE/
+  714  ./STS 
+  715  cd /home/frank/frankdev/frank/
+  716  cd faulttolerence/
+  717  git status
+  718  fit add .
+  719  git add .
+  720  git commit -m "refactor hystrix server"
+  721  git config --global user.name "liykfrank"
+  722  git config --global user.email liyk.frank.public@gmail.com
+  723  git push
+  724  ls
+  725  git add .
+  726  git commit -m "refactory turbine"
+  727  git status
+  728  git add .
+  729  git commit -m "refactory services"
+  730  git push
+  731  docker rm rabbit
+  732  docker run -d -it --name rabbit --hostname rabbit -p 30000:5672 -p 30001:15672 rabbitmq:management
+  733  git status
+  734  git add .
+  735  git commit
+  736  git push
+  737  cd /home/frank/
+  738  ls
+  739  cd frankdev/
+  740  ls
+  741  cd workspace/
+  742  ls
+  743  git clone https://github.com/liykfrank/openshift-cd-demo.git
+  744  ls
+  745  cd openshift-cd-demo/
+  746  ls
+  747  edit
+  748  cd ..
+  749  cd frank/
+  750  ls
+  751  cd faulttolerence/
+  752  edit
+  753  git add .
+  754  git commit -m "update readme"
+  755  git push
+  756  git pull
+  757  git status
+  758  git pull
+  759  git add .
+  760  git commit -m "update readme"
+  761  git push
+  762  cd agency-service/
+  763  ls
+  764  ls target/
+  765  cd ..
+  766  git clone https://github.com/liykfrank/spring-cloud-kubernetes.git
+  767  ls
+  768  cd spring-cloud-k
+  769  cd spring-cloud-kubernetes/
+  770  ls
+  771  edit
+  772  cd ..
+  773  ls
+  774  cd faulttolerence/
+  775  git status
+  776  git add .
+  777  git commit -m "update agency-service"
+  778  git push
+  779  git commit -m "update agency-service"
+  780  git add .
+  781  git commit -m "update agency-service"
+  782  git push
+  783  git status
+  784  git add .
+  785  git commit -m "refactory agency-service"
+  786  git push
+  787  git add .
+  788  git commit -m "refactory agency-service"
+  789  git push
+  790  git add .
+  791  git commit -m "refactory agency-service"
+  792  git push
+  793  git add .
+  794  git commit -m "refactory agency-service"
+  795  git push
+  796  git status
+  797  cd images/
+  798  ls
+  799  rm -rf Screenshot\ *
+  800  ls -lrt
+  801  git status
+  802  git rm Screenshot 2018-07-16 10:49:52.png
+  803  git rm Screenshot\ 2018-07-16\ 10:49:52.png
+  804  git rm Screenshot\ from\ 2018-07-16\ 10-50-46.png
+  805  git status
+  806  git commit
+  807  git push
+  808  powreoff
+  809  poweroff
+  810  cd frankdev/frank/
+  811  ls
+  812  git clone https://github.com/liykfrank/logtracing.git
+  813  ls
+  814  cd faulttolerence/
+  815  ls
+  816  cp -r agency-service ../logtracing/
+  817  cp -r salesdata-service/ ../logtracing/
+  818  cp -r balance-service/ ../logtracing/
+  819  cp -r risk-service/ ../logtracing/
+  820  cd ..
+  821  cd logtracing/
+  822  ls
+  823  cp -r risk-service assurance-service
+  824  ls
+  825  vim assurance-service/pom.xml 
+  826  ls
+  827  vim pom.xml 
+  828  cd /home/frank/frankdev/sts-bundle/sts-3.9.4.RELEASE/
+  829  ./STS 
+  830  ls
+  831  cd assurance-service/
+  832  mvn clean package
+  833  java -jar target/assurance-service-0.0.1-SNAPSHOT.jar
+  834  cd risk-log-service/
+  835  mvn clean package
+  836  java -jar target/risk-log-service-0.0.1-SNAPSHOT.jar
+  837  cd balance-log-service/
+  838  mvn clean package
+  839  java -jar target/balance-log-service-0.0.1-SNAPSHOT.jar
+  840  ls
+  841  cd salesdata-log-service/
+  842  mvn clean package
+  843  java -jar target/salesdata-log-service-0.0.1-SNAPSHOT.jar
+  844  ls
+  845  edit
+  846  ls
+  847  mv agency-service/ agency-log-service/
+  848  mv balance-service/ balance-log-service/
+  849  mv salesdata-service/ salesdata-log-service/
+  850  mv risk-service/ risk-log-service/
+  851  ls
+  852  cd agency-log-service/
+  853  mvn clean package
+  854  java -jar target/agency-log-service-0.0.1-SNAPSHOT.jar
+  855  poweroff
+  856  cd /home/frank/frankdev/frank/
+  857  ls
+  858  ifconfig
+  859  ls
+  860  cd logtracing/
+  861  pwd
+  862  ls
+  863  mkdir images
+  864  cd images/
+  865  ls
+  866  ll
+  867  cd ..
+  868  edit
+  869  git status
+  870  git add .
+  871  git commit -m "create 5 applications"
+  872  git push
+  873  poweroff
+  874  git status
+  875  mvn clean package
+  876  ls
+  877  cd assurance-service/
+  878  mvn clean package
+  879  java -jar target/assurance-service-0.0.1-SNAPSHOT.jar
+  880  cd /home/frank/
+  881  ls
+  882  cd frankdev/frank/
+  883  ls
+  884  mkdir inkubator
+  885  cd inkubator/
+  886  ls
+  887  git clone https://github.com/spring-cloud-incubator/spring-cloud-kubernetes.git
+  888  ls
+  889  cd spring-cloud-kubernetes/
+  890  code
+  891  cd ..
+  892  ls
+  893  cd ..
+  894  ls
+  895  cd spring-cloud-k8s-minion/
+  896  ls
+  897  edit
+  898  cd ..
+  899  cd spring-cloud-k8s-boss/
+  900  edit
+  901  poweroff
+  902  cd frankdev/sts-bundle/sts-3.9.4.RELEASE/
+  903  ./STS 
+  904  cd /home/frank/frankdev/frank/
+  905  ls
+  906  cd security-demo/
+  907  ls
+  908  mvn clean package
+  909  ls
+  910  cd target/
+  911  ls
+  912  java -jar security-demo-0.0.1-SNAPSHOT.jar
+  913  ifconfig
+  914  poweroff
+  915  sudo vi /etc/resolv.conf
+  916  nslookup mydns
+  917  nslookup frankos.nyc3.example.com
+  918  nslookup
+  919  ifconfig | more
+  920  nslookup
+  921  telnet 192.168.100.170 53
+  922  ping 192.168.100.170
+  923  telnet 192.168.100.170 22
+  924  telnet 192.168.100.170 53
+  925  nslookup
+  926  poweroff
+  927  sudo su -
+  928  ping www.baidu.com
+  929  sudo systemctl start docker
+  930  sudo systemctl status docker
+  931  sudo systemctl stop firewalld
+  932  sudo getenforce
+  933  sudo setenforce 0
+  934  oc cluster up
+  935  cd /home/frank/
+  936  ls
+  937  cd frankdev/
+  938  ls
+  939  cd frank/
+  940  ls
+  941  cd ..
+  942  ls
+  943  cd idea-IU-181.5281.24/
+  944  ls
+  945  cd bin/
+  946  ls
+  947  ./idea.sh 
+  948  git clone https://github.com/liykfrank/openshift-s2i-master.git
+  949  ls
+  950  cd openshift-s2i-master/
+  951  ls
+  952  subl .
+  953  subl
+  954  ls
+  955  cd s
+  956  cd scripts/
+  957  ls
+  958  vim s2i-template.bash 
+  959  ls
+  960  cd ..
+  961  ls
+  962  cd s2i-nfe-frontend/
+  963  ls
+  964  vim Dockerfile 
+  965  ls
+  966  vim s2i-nfe-frontend.json 
+  967  pwd
+  968  cd ..
+  969  git status
+  970  git add .
+  971  git commit -m "chang to frank local git"
+  972  git push
+  973  sudo reboot
+  974  git clone https://github.com/liykfrank/openshift-s2i-master.git
+  975  ls
+  976  cd openshift-s2i-master/
+  977  ls
+  978  subl .
+  979  subl
+  980  ls
+  981  cd s
+  982  cd scripts/
+  983  ls
+  984  vim s2i-template.bash 
+  985  ls
+  986  cd ..
+  987  ls
+  988  cd s2i-nfe-frontend/
+  989  ls
+  990  vim Dockerfile 
+  991  ls
+  992  vim s2i-nfe-frontend.json 
+  993  pwd
+  994  cd ..
+  995  git status
+  996  git add .
+  997  git commit -m "chang to frank local git"
+  998  git push
+  999  sudo reboot
+ 1000  ls
+ 1001  cd scripts/
+ 1002  ls
+ 1003  chmod u+x *
+ 1004  ll
+ 1005  ./s2i-image-builder.bash nfe s2i-nfe-springboot-microservice
+ 1006  ./s2i-template.bash nfe s2i-nfe-springboot-microservice
+ 1007  ./s2i-image-builder.bash nfe s2i-nfe-frontend
+ 1008  ./s2i-template.bash nfe s2i-nfe-frontend
+ 1009  history > his.txt

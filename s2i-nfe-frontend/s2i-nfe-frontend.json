@@ -251,7 +251,7 @@
         "name": "${APP_NAME}"
       },
       "spec": {
-        "host": "${APP_NAME}.nfedev.accelya.com",
+        "host": "${APP_NAME}.apps.its-alm.net",
         "port": {
           "targetPort": "8080-tcp"
         },
@@ -271,7 +271,7 @@
                 "type": "Admitted"
               }
             ],
-            "host": "${APP_NAME}.nfedev.accelya.com",
+            "host": "${APP_NAME}.apps.its-alm.net",
             "routerName": "router",
             "wildcardPolicy": "None"
           }
